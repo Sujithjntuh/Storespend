@@ -4,10 +4,12 @@ const express = require("express");
 
 const pool = require("./db/pool");
 const productRoutes = require("./routes/product.routes");
+const authRoutes = require("./routes/auth.routes");
 
 const app = express(); 
 app.use(express.json()); //parsing the req 
 app.use("/api/products" , productRoutes);
+app.use("/api/auth",authRoutes);
 
 
 app.get("/",(req , res) =>{
